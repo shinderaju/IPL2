@@ -1,0 +1,40 @@
+<div ng-controller="player_ctrl">
+    <!-- <div ng-controller="team_ctrl as t"> -->
+    <div class="thumbnail">
+        <table class="tb1" align="center" cellspacing="20" cellpadding="20">
+            <th>
+                <tr>
+                    <td>
+                        <img-url data=data3.team_img_url></img-url>
+                    </td>
+                    <td>
+                        <li> Team : {{data3.team_name}} </li>
+                        <li> Captain : {{data3.team_captain}}</li>
+                        <li> Coach : {{data3.team_coach}}</li>
+                        <li> Owner : {{data3.team_owner}}</li>
+                        <li> Home ground : {{data3.team_home_venue}}</li>
+
+                    </td>
+                </tr>
+            </th>
+
+            <tbody>
+                <tr ng-repeat="x in data">
+                    <td>
+                        <li>Name : {{x.player_name}}</li>
+                        <li>Role : {{x.player_role}}</li>
+                        <li>Batting Style : {{x.player_batting_style}}</li>
+                        <li>Bowling Style : {{x.player_bowling_style}}</li>
+                        <li>Date of Birth : {{x.player_dob}}</li>
+                        <li>Nationality : {{x.player_nationality}}</li>
+                    </td>
+                    <td>
+                        <!-- <img src="{{x.player_img_url}}"></img> -->
+                        <img-url data=x.player_img_url></img-url>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
