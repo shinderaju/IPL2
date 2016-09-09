@@ -19,17 +19,10 @@ function demo($scope, $firebaseObject, teamService) {
     var fbObject = $firebaseObject(fbref);
     fbObject.$loaded().then(function(obj) {
         $scope.data = obj;
-        // teamService.setTeam($scope.data);
     });
     $scope.changeTeam = function(teamName) {
         teamService.setTeam(teamName);
     };
     $scope.teamName = teamService.getTeam();
-  
-    // fbref.orderByChild("team_name").equalTo($scope.teamName).on("child_added", function(data) {
-    //     //console.log("Start at filter: " + data.val().player_name);
-    //     $scope.data2 = data;
-    //     // console.log("Start at filter:");
-    // });
 
 };

@@ -5,7 +5,7 @@
         width: 50%;
     }
 </style>
-<div class="container" ng-controller="team_ctrl">
+<div style="margin-top:  50px;" class="container" ng-controller="team_ctrl" >
 
     <div id="dynamiccontentcarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
         <ol class="carousel-indicators">
@@ -18,8 +18,9 @@
                     <div class="carousel-caption">
                         <h3>{{x.team_name}}</h3>
                     </div>
-                    <!-- <img-url data=x.team_img_url ng-click="changeTeam(x.team_img_url)"></img-url>  -->
-                     <img-url data=x.team_img_url ></img-url>
+                    <div ng-controller="img_ctrl">
+                        <img src="abc.png" id={{$parent.x.team_img_url}} name="{{getUrl($parent.x.team_img_url)}}" ></img>
+                    </div>
                 </a>
             </div>
         </div>

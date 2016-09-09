@@ -8,19 +8,17 @@ angular.module('myApp', ['ui.router', 'firebase'])
             .state('home', {
                 url: '/home',
                 templateUrl: 'template/home.html',
-                // controller: 'team_ctrl',
-
             })
             .state('player', {
                 url: '/player?team',
                 templateUrl: 'template/player.html',
-                // controller: 'player_ctrl',
-
             })
             .state('teaminfo', {
                 url: '/teaminfo?team',
                 templateUrl: 'template/teaminfo.html',
-                // controller: 'player_ctrl',
-
+            })
+            .state('player.playerinfo', {
+                url: '/playerinfo?player',
+                templateUrl: 'template/playerinfo.html',
             })
     });

@@ -1,40 +1,47 @@
-<div ng-controller="player_ctrl">
-    <!-- <div ng-controller="team_ctrl as t"> -->
-    <div class="thumbnail">
-        <table class="tb1" align="center" cellspacing="20" cellpadding="20">
-            <th>
+<style>
+    body {
+        background-image: url("/home/bridgeit/Downloads/GL.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<div style="margin-top:  60px;" ng-controller="player_ctrl">
+    <div class="col-sm-3">
+        <div class="thumbnail">
+            <div ng-controller="img_ctrl">
+                <img src="abc.png" id={{$parent.data3.team_img_url}} name="{{getUrl($parent.data3.team_img_url)}}" width="200" height="200"></img>
+            </div>
+            <h1>{{team}}</h1>
+            <table align="center">
                 <tr>
-                    <td>
-                        <img-url data=data3.team_img_url></img-url>
-                    </td>
                     <td>
                         <li> Team : {{data3.team_name}} </li>
                         <li> Captain : {{data3.team_captain}}</li>
                         <li> Coach : {{data3.team_coach}}</li>
                         <li> Owner : {{data3.team_owner}}</li>
-                        <li> Home ground : {{data3.team_home_venue}}</li>
-
+                        <li> Home ground: {{data3.team_home_venue}}</li>
                     </td>
                 </tr>
-            </th>
+            </table>
 
-            <tbody>
+        </div>
+
+    </div>
+
+    <div class="col-sm-3">
+        <div class="thumbnail">
+            <h1 align="center"> Players List </h1>
+            <table align="center">
                 <tr ng-repeat="x in data">
                     <td>
-                        <li>Name : {{x.player_name}}</li>
-                        <li>Role : {{x.player_role}}</li>
-                        <li>Batting Style : {{x.player_batting_style}}</li>
-                        <li>Bowling Style : {{x.player_bowling_style}}</li>
-                        <li>Date of Birth : {{x.player_dob}}</li>
-                        <li>Nationality : {{x.player_nationality}}</li>
-                    </td>
-                    <td>
-                        <!-- <img src="{{x.player_img_url}}"></img> -->
-                        <img-url data=x.player_img_url></img-url>
+                        <a ui-sref=".playerinfo({ player : x.player_name })" ng-click="playerinfo(x.player_name)">
+                            <li>{{x.player_name}}</li>
                     </td>
                 </tr>
-            </tbody>
-        </table>
+            </table>
+        </div>
     </div>
-</div>
+    <div class="col-sm-4">
+        <ui-view></ui-view>
+    </div>
 </div>

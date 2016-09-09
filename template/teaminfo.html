@@ -1,14 +1,11 @@
 <div class="container" ng-controller="team_ctrl">
     <p></p>
-    <!-- <div class="row home"> -->
         <div class="thumbnail">
       <table class="tb1" align="center" cellspacing="20" cellpadding="20">
           <tr>
               <th>Team datails</th>
               <th><center>Team logo</center?</th>
           </tr>
-        <!-- <div > -->
-                    <!-- <a ui-sref="player"> -->
                     <tbody>
                         <tr ng-repeat="x in data">
                                 <td>
@@ -20,22 +17,12 @@
                                 </td>
                                 <td>
                                   <a ui-sref="player({ team : x.team_name })">
-                                    <!-- <img-url data=x.team_img_url ng-click="changeTeam(x.team_img_url)"></img-url> -->
                                      <img-url data=x.team_img_url ></img-url>
                                     </a>
                                 </td>
-
                         </tr>
-
-                        <!-- <img src="https://firebasestorage.googleapis.com/v0/b/ipl2016
-                    -adcf4.appspot.com/o/team_logo%2FDD.jpg?alt=media&token=da8dcb
-                    a9-9789-4d7e-800f-0eb399890ae7" style="width:240px;height:240px"
-                    ng-click="changeTeam(x.team_name)"> -->
-                        <!-- <button ng-click="changeTeam(x.team_name)">OK</button> -->
                     </tbody>
                 </table>
 
             </div>
         </div>
-    <!-- </div> -->
-<!-- </div> -->
