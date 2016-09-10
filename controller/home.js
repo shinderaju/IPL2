@@ -21,3 +21,5 @@ function demo($scope, $firebaseObject, teamService) {
 
 
 };
+{/* <div ng-controller="imgCtrl" ng-init="{{getUrl($parent.teamData.team_img_url)}}">
+  <img src="{{imgSrc}}"></img> */}
