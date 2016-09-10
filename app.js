@@ -1,6 +1,8 @@
 /**
- * perform routing according to state
- */
+* FileName:app.js
+* CreatedBy: raju
+* purpose : perform routing according to state
+*/
 angular.module('myApp', ['ui.router', 'firebase'])
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');

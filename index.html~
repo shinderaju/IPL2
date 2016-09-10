@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="app.js"></script>
+	<style media="screen">
+		body {
+			background-image: url("/home/bridgeit/Downloads/index.jpeg");
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.home {
+			color: white;
+		}
+
+		table.tb1 {
+			border-collapse: separate;
+			border-spacing: 10px 50px;
+		}
+
+		.carousel-inner> .item> img,
+		.carousel-inner> .item> a> img {
+			width: 50%;
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body ng-app="myApp" ng-controller="team_ctrl" >
+	<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container" >
+			<div>
+				<h1 class="nav navbar-nav navbar-default">Indian Premier League 2016</h1>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a ui-sref="home"><i class="fa fa-home"></i> <span class="glyphicon glyphicon-home"></span> Home</a></li>
+				<li> <a ui-sref="teaminfo"><i class="fa fa-comment"></i> Teams </a></li>
+			</ul>
+		</div>
+	</nav>
+	<div ui-view></div>
+</body>
+<script src="controller/home.js"></script>
+<script src="controller/player.js"></script>
+<script src="controller/teamService.js"></script>
+<script src="controller/getImage.js"></script>
+<script src="controller/imgService.js"></script>
+<script src="directive/imgUrl.js"></script>
+<script src="controller/img_ctrl.js"></script>
+<script src="controller/playerinfo.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyCjBOGVGe0ehmVm089GlWIQ-_ht5UI3Rgo",
+		authDomain: "ipl2016-adcf4.firebaseapp.com",
+		databaseURL: "https://ipl2016-adcf4.firebaseio.com",
+		storageBucket: "ipl2016-adcf4.appspot.com",
+	};
+	firebase.initializeApp(config);
+</script>
+</html>
+

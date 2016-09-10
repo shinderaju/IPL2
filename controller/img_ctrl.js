@@ -1,17 +1,18 @@
-angular.module('myApp').controller('img_ctrl', demo);
-
+/**
+ * FileName:home.js
+ * CreatedBy: raju
+ * Purpose :controller for geting images
+ */
+angular.module('myApp').controller('imgCtrl', demo);
 function demo($scope, teamService) {
-  $scope.getUrl = function(data) {
+  // method to fetch url of images
+  $scope.getUrl = function(imgPath) {
       var storage = firebase.storage();
       var storageRef = storage.ref();
-      storageRef.child(data).getDownloadURL().then(function(url) {
+      storageRef.child(imgPath).getDownloadURL().then(function(url) {
           // Get the download URL for 'images/stars.jpg'
-         document.getElementById().src = url;
-
-          // var myEl = angular.element( document.querySelector( '#data' ) );
-          // myEl.attr('src',url);
-
-
+          // $scope.imgSrc = url;
+         document.getElementById(imgPath).src = url;
       });
   }
 }

@@ -1,4 +1,4 @@
-<div class="container" ng-controller="team_ctrl">
+<div class="container" ng-controller="homeCtrl">
     <p></p>
         <div class="thumbnail">
       <table class="tb1" align="center" cellspacing="20" cellpadding="20">
@@ -7,17 +7,17 @@
               <th><center>Team logo</center?</th>
           </tr>
                     <tbody>
-                        <tr ng-repeat="x in data">
+                        <tr ng-repeat="teamData in teamsData">
                                 <td>
-                                    <li> Team name : {{x.team_name}}</li>
-                                    <li> Team captain : {{x.team_captain}}</li>
-                                    <li> Team coach : {{ x.team_coach}} </li>
-                                    <li> Home ground : {{x.team_home_venue}} </li>
-                                    <li>Team owner : {{x.team_owner}}</li>
+                                    <li> Team name : {{teamData.team_name}}</li>
+                                    <li> Team captain : {{teamData.team_captain}}</li>
+                                    <li> Team coach : {{ teamData.team_coach}} </li>
+                                    <li> Home ground : {{teamData.team_home_venue}} </li>
+                                    <li>Team owner : {{teamData.team_owner}}</li>
                                 </td>
                                 <td>
-                                  <a ui-sref="player({ team : x.team_name })">
-                                     <img-url data=x.team_img_url ></img-url>
+                                  <a ui-sref="player({ team : teamData.team_name })">
+                                     <img-url data=teamData.team_img_url ></img-url>
                                     </a>
                                 </td>
                         </tr>

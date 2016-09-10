@@ -1,22 +1,20 @@
-<div ng-controller="player_ctrl">
+<div ng-controller="playerCtrl">
     <div align="justify" class="thumbnail">
         <!-- <img-url data=data2.player_img_url></img-url> -->
         <center>
-        <div ng-controller="img_ctrl">
-            <img src="abc.png" id={{$parent.data2.player_img_url}} name="{{getUrl($parent.data2.player_img_url)}}" width="200" height="200"></img>
+        <div ng-controller="imgCtrl">
+            <img src="abc.png" id={{$parent.playerInfo.player_img_url}} name="{{getUrl($parent.playerInfo.player_img_url)}}" width="200" height="200"></img>
         </div>
       </center>
         <table align="center">
             <tr>
                 <td>
-
-                    <li>Name          : {{data2.player_name}}</li>
-                    <li>Role          : {{data2.player_role}}</li>
-                    <li>Batting Style : {{data2.player_batting_style}}</li>
-                    <li>Bowling Style : {{data2.player_bowling_style}}</li>
-                    <li>Date of Birth : {{data2.player_dob}}</li>
-                    <li>Nationality   : {{data2.player_nationality}}</li>
-
+                    <li>Name          : {{playerInfo.player_name}}</li>
+                    <li>Role          : {{playerInfo.player_role}}</li>
+                    <li>Batting Style : {{playerInfo.player_batting_style}}</li>
+                    <li>Bowling Style : {{playerInfo.player_bowling_style}}</li>
+                    <li>Date of Birth : {{playerInfo.player_dob}}</li>
+                    <li>Nationality   : {{playerInfo.player_nationality}}</li>
                 </td>
             </tr>
         </table>

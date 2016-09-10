@@ -5,21 +5,23 @@
         width: 50%;
     }
 </style>
-<div style="margin-top:  50px;" class="container" ng-controller="team_ctrl" >
+<div style="margin-top:  50px;" class="container" ng-controller="homeCtrl" >
 
     <div id="dynamiccontentcarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
         <ol class="carousel-indicators">
-            <li data-target="#dynamiccontentcarousel" data-ng-repeat="x in data" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
+            <li data-target="#dynamiccontentcarousel" data-ng-repeat="teamData in teamsData" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-            <div class="item" data-ng-repeat="x in data" data-ng-class="{active : $first}">
+            <div class="item" data-ng-repeat="teamData in teamsData" data-ng-class="{active : $first}">
                 <p></p>
-                <a ui-sref="player({ team : x.team_name })">
+                <a ui-sref="player({ team : teamData.team_name })">
                     <div class="carousel-caption">
-                        <h3>{{x.team_name}}</h3>
+                        <h3>{{teamData.team_name}}</h3>
                     </div>
-                    <div ng-controller="img_ctrl">
-                        <img src="abc.png" id={{$parent.x.team_img_url}} name="{{getUrl($parent.x.team_img_url)}}" ></img>
+                    <div ng-controller="imgCtrl">
+                      <!-- <div ng-controller="imgCtrl" ng-init="{{getUrl($parent.teamData.team_img_url)}}">
+                        <img src="{{imgSrc}}"></img> -->
+                        <img src="abc.png" id={{$parent.teamData.team_img_url}} name="{{getUrl($parent.teamData.team_img_url)}}" ></img>
                     </div>
                 </a>
             </div>

@@ -5,37 +5,35 @@
         background-repeat: no-repeat;
     }
 </style>
-<div style="margin-top:  60px;" ng-controller="player_ctrl">
+<div style="margin-top:  60px;" ng-controller="playerCtrl">
     <div class="col-sm-3">
         <div class="thumbnail">
-            <div ng-controller="img_ctrl">
-                <img src="abc.png" id={{$parent.data3.team_img_url}} name="{{getUrl($parent.data3.team_img_url)}}" width="200" height="200"></img>
+            <div ng-controller="imgCtrl">
+                <img src="abc.png" id={{$parent.teamInfo.team_img_url}} name="{{getUrl($parent.teamInfo.team_img_url)}}" width="200" height="200"></img>
             </div>
             <h1>{{team}}</h1>
             <table align="center">
                 <tr>
                     <td>
-                        <li> Team : {{data3.team_name}} </li>
-                        <li> Captain : {{data3.team_captain}}</li>
-                        <li> Coach : {{data3.team_coach}}</li>
-                        <li> Owner : {{data3.team_owner}}</li>
-                        <li> Home ground: {{data3.team_home_venue}}</li>
+                        <li> Team : {{teamInfo.team_name}} </li>
+                        <li> Captain : {{teamInfo.team_captain}}</li>
+                        <li> Coach : {{teamInfo.team_coach}}</li>
+                        <li> Owner : {{teamInfo.team_owner}}</li>
+                        <li> Home ground : {{teamInfo.team_home_venue}}</li>
                     </td>
                 </tr>
             </table>
-
         </div>
-
     </div>
 
     <div class="col-sm-3">
         <div class="thumbnail">
             <h1 align="center"> Players List </h1>
             <table align="center">
-                <tr ng-repeat="x in data">
+                <tr ng-repeat="playerData in playersInfo">
                     <td>
-                        <a ui-sref=".playerinfo({ player : x.player_name })" ng-click="playerinfo(x.player_name)">
-                            <li>{{x.player_name}}</li>
+                        <a ui-sref=".playerinfo({ player : playerData.player_name })" ng-click="playerinfo(playerData.player_name)">
+                            <li>{{playerData.player_name}}</li>
                     </td>
                 </tr>
             </table>

@@ -1,7 +1,9 @@
 /*
- * purpose directive for download img from firebase
- * @ param {String} -data
- */
+* FileName:imgUrl.js
+* CreatedBy: raju
+* purpose : directive for download img from firebase
+* @ param {String} -data
+*/
 angular.module('myApp').directive('imgUrl', function() {
     return {
         restrict: 'E',
